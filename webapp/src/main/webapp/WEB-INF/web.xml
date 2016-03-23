@@ -45,18 +45,5 @@
 		<servlet-name>springmvc</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>job</servlet-name>
-		<servlet-class>com.tongbanjie.legends.client.core.JobExecutorServlet</servlet-class>
-		<load-on-startup>2</load-on-startup>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>job</servlet-name>
-		<url-pattern>/job/</url-pattern>
-	</servlet-mapping>
-
-
 	
 </web-app>
