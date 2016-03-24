@@ -26,7 +26,7 @@
 		</constructor-arg>
 	</bean>
 	
-	<bean id="redisComponent" class="com.tongbanjie.commons.component.RedisComponent" destroy-method="destory">
+	<bean id="redisComponent" class="com.placement.demolition.commons.component.RedisComponent" destroy-method="destory">
     	<property name="pool" ref="shardedJedisPool"></property>
 	</bean>
 

@@ -7,6 +7,6 @@
 	</settings>
 
 	<typeAliases>
-		<typeAlias type="com.tongbanjie.commons.lang.Paginator" alias="Paginator" />
+		
 	</typeAliases>
 </configuration>

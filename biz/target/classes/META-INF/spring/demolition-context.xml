@@ -21,7 +21,7 @@
 	</bean>
 
 	<!-- demolition-common-dal -->
-	<import resource="classpath:META-INF/spring/demolition-db.xml" />
+	<!-- <import resource="classpath:META-INF/spring/demolition-db.xml" /> -->
 	<import resource="classpath:META-INF/spring/demolition-dao.xml" />
 	
 	<!-- demolition-core-service -->
