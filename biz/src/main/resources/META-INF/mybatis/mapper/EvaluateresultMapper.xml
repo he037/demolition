@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="Evaluateresult" >
+  <resultMap id="BaseResultMap" type="Evaluateresult" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="evaluateId" property="evaluateid" jdbcType="BIGINT" />
+    <result column="houseNum" property="housenum" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="structureLevel" property="structurelevel" jdbcType="VARCHAR" />
+    <result column="identificateArea" property="identificatearea" jdbcType="VARCHAR" />
+    <result column="excessArea" property="excessarea" jdbcType="VARCHAR" />
+    <result column="noLicenseArea" property="nolicensearea" jdbcType="VARCHAR" />
+    <result column="realArea" property="realarea" jdbcType="VARCHAR" />
+    <result column="legalAreaPrice" property="legalareaprice" jdbcType="VARCHAR" />
+    <result column="noLicensePrice" property="nolicenseprice" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="facilities" property="facilities" jdbcType="VARCHAR" />
+    <result column="insetTime" property="insettime" jdbcType="VARCHAR" />
+    <result column="attachment" property="attachment" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, evaluateId, houseNum, type, structureLevel, identificateArea, excessArea, noLicenseArea, 
+    realArea, legalAreaPrice, noLicensePrice, remark, facilities, insetTime, attachment
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_evaluateresult
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_evaluateresult
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="Evaluateresult" >
+    insert into t_evaluateresult (id, evaluateId, houseNum, 
+      type, structureLevel, identificateArea, 
+      excessArea, noLicenseArea, realArea, 
+      legalAreaPrice, noLicensePrice, remark, 
+      facilities, insetTime, attachment
+      )
+    values (#{id,jdbcType=BIGINT}, #{evaluateid,jdbcType=BIGINT}, #{housenum,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{structurelevel,jdbcType=VARCHAR}, #{identificatearea,jdbcType=VARCHAR}, 
+      #{excessarea,jdbcType=VARCHAR}, #{nolicensearea,jdbcType=VARCHAR}, #{realarea,jdbcType=VARCHAR}, 
+      #{legalareaprice,jdbcType=VARCHAR}, #{nolicenseprice,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{facilities,jdbcType=VARCHAR}, #{insettime,jdbcType=VARCHAR}, #{attachment,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="Evaluateresult" >
+    insert into t_evaluateresult
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="evaluateid != null" >
+        evaluateId,
+      </if>
+      <if test="housenum != null" >
+        houseNum,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="structurelevel != null" >
+        structureLevel,
+      </if>
+      <if test="identificatearea != null" >
+        identificateArea,
+      </if>
+      <if test="excessarea != null" >
+        excessArea,
+      </if>
+      <if test="nolicensearea != null" >
+        noLicenseArea,
+      </if>
+      <if test="realarea != null" >
+        realArea,
+      </if>
+      <if test="legalareaprice != null" >
+        legalAreaPrice,
+      </if>
+      <if test="nolicenseprice != null" >
+        noLicensePrice,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="facilities != null" >
+        facilities,
+      </if>
+      <if test="insettime != null" >
+        insetTime,
+      </if>
+      <if test="attachment != null" >
+        attachment,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="evaluateid != null" >
+        #{evaluateid,jdbcType=BIGINT},
+      </if>
+      <if test="housenum != null" >
+        #{housenum,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="structurelevel != null" >
+        #{structurelevel,jdbcType=VARCHAR},
+      </if>
+      <if test="identificatearea != null" >
+        #{identificatearea,jdbcType=VARCHAR},
+      </if>
+      <if test="excessarea != null" >
+        #{excessarea,jdbcType=VARCHAR},
+      </if>
+      <if test="nolicensearea != null" >
+        #{nolicensearea,jdbcType=VARCHAR},
+      </if>
+      <if test="realarea != null" >
+        #{realarea,jdbcType=VARCHAR},
+      </if>
+      <if test="legalareaprice != null" >
+        #{legalareaprice,jdbcType=VARCHAR},
+      </if>
+      <if test="nolicenseprice != null" >
+        #{nolicenseprice,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="facilities != null" >
+        #{facilities,jdbcType=VARCHAR},
+      </if>
+      <if test="insettime != null" >
+        #{insettime,jdbcType=VARCHAR},
+      </if>
+      <if test="attachment != null" >
+        #{attachment,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="Evaluateresult" >
+    update t_evaluateresult
+    <set >
+      <if test="evaluateid != null" >
+        evaluateId = #{evaluateid,jdbcType=BIGINT},
+      </if>
+      <if test="housenum != null" >
+        houseNum = #{housenum,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="structurelevel != null" >
+        structureLevel = #{structurelevel,jdbcType=VARCHAR},
+      </if>
+      <if test="identificatearea != null" >
+        identificateArea = #{identificatearea,jdbcType=VARCHAR},
+      </if>
+      <if test="excessarea != null" >
+        excessArea = #{excessarea,jdbcType=VARCHAR},
+      </if>
+      <if test="nolicensearea != null" >
+        noLicenseArea = #{nolicensearea,jdbcType=VARCHAR},
+      </if>
+      <if test="realarea != null" >
+        realArea = #{realarea,jdbcType=VARCHAR},
+      </if>
+      <if test="legalareaprice != null" >
+        legalAreaPrice = #{legalareaprice,jdbcType=VARCHAR},
+      </if>
+      <if test="nolicenseprice != null" >
+        noLicensePrice = #{nolicenseprice,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="facilities != null" >
+        facilities = #{facilities,jdbcType=VARCHAR},
+      </if>
+      <if test="insettime != null" >
+        insetTime = #{insettime,jdbcType=VARCHAR},
+      </if>
+      <if test="attachment != null" >
+        attachment = #{attachment,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="Evaluateresult" >
+    update t_evaluateresult
+    set evaluateId = #{evaluateid,jdbcType=BIGINT},
+      houseNum = #{housenum,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      structureLevel = #{structurelevel,jdbcType=VARCHAR},
+      identificateArea = #{identificatearea,jdbcType=VARCHAR},
+      excessArea = #{excessarea,jdbcType=VARCHAR},
+      noLicenseArea = #{nolicensearea,jdbcType=VARCHAR},
+      realArea = #{realarea,jdbcType=VARCHAR},
+      legalAreaPrice = #{legalareaprice,jdbcType=VARCHAR},
+      noLicensePrice = #{nolicenseprice,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      facilities = #{facilities,jdbcType=VARCHAR},
+      insetTime = #{insettime,jdbcType=VARCHAR},
+      attachment = #{attachment,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
