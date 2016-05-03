@@ -1,4 +1,4 @@
-package com.placement.demolition.commons.component;
+package com.placement.demolition.component;
 
 
 

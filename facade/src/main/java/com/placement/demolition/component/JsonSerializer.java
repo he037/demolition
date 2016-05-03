@@ -1,4 +1,4 @@
-package com.placement.demolition.commons.component;
+package com.placement.demolition.component;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import redis.clients.util.SafeEncoder;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.placement.demolition.commons.component.RedisComponent.Serializer;
+import com.placement.demolition.component.RedisComponent.Serializer;
 
 
 public class JsonSerializer implements Serializer {
