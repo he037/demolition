@@ -2,13 +2,16 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
-	>
-	
-	<context:component-scan base-package="com.placement.demolition" />
-	
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:component-scan base-package="com.placement.demolition">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
 	<!-- 定义环境变量 -->
-	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="ignoreResourceNotFound" value="true" />
 		<property name="locations">
 			<list>
@@ -21,15 +24,16 @@
 	</bean>
 
 	<!-- demolition-common-dal -->
-	<!-- <import resource="classpath:META-INF/spring/demolition-db.xml" /> -->
+	<import resource="classpath:META-INF/spring/demolition-db.xml" />
 	<import resource="classpath:META-INF/spring/demolition-dao.xml" />
-	
+
 	<!-- demolition-core-service -->
 	<import resource="classpath:META-INF/spring/demolition-cache.xml" />
 	<import resource="classpath:META-INF/spring/demolition-service.xml" />
-	
+
 	<import resource="classpath:META-INF/spring/demolition-dubbo.xml" />
-	
+	<import resource="classpath:META-INF/spring/demolition-shiro.xml" />
+
 	<!-- ETag -->
 	<bean id="shallowEtagHeaderFilter" class="org.springframework.web.filter.ShallowEtagHeaderFilter" />
 

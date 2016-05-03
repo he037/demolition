@@ -32,7 +32,7 @@
 	<import resource="classpath:META-INF/spring/demolition-service.xml" />
 
 	<import resource="classpath:META-INF/spring/demolition-dubbo.xml" />
-	<!-- <import resource="classpath:META-INF/spring/demolition-shiro.xml" /> -->
+	<import resource="classpath:META-INF/spring/demolition-shiro.xml" />
 
 	<!-- ETag -->
 	<bean id="shallowEtagHeaderFilter" class="org.springframework.web.filter.ShallowEtagHeaderFilter" />

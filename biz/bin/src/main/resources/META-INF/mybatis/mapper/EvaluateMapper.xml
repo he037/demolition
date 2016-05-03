@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="Evaluate" >
+  <resultMap id="BaseResultMap" type="Evaluate" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="evaluateTime" property="evaluatetime" jdbcType="VARCHAR" />
+    <result column="relocateNum" property="relocatenum" jdbcType="VARCHAR" />
+    <result column="relocatePeople" property="relocatepeople" jdbcType="VARCHAR" />
+    <result column="houseLocated" property="houselocated" jdbcType="VARCHAR" />
+    <result column="evaluateBasis" property="evaluatebasis" jdbcType="VARCHAR" />
+    <result column="insertTime" property="inserttime" jdbcType="VARCHAR" />
+    <result column="attachment" property="attachment" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, evaluateTime, relocateNum, relocatePeople, houseLocated, evaluateBasis, insertTime, 
+    attachment
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_evaluate
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_evaluate
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="Evaluate" >
+    insert into t_evaluate (id, evaluateTime, relocateNum, 
+      relocatePeople, houseLocated, evaluateBasis, 
+      insertTime, attachment)
+    values (#{id,jdbcType=BIGINT}, #{evaluatetime,jdbcType=VARCHAR}, #{relocatenum,jdbcType=VARCHAR}, 
+      #{relocatepeople,jdbcType=VARCHAR}, #{houselocated,jdbcType=VARCHAR}, #{evaluatebasis,jdbcType=VARCHAR}, 
+      #{inserttime,jdbcType=VARCHAR}, #{attachment,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="Evaluate" >
+    insert into t_evaluate
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="evaluatetime != null" >
+        evaluateTime,
+      </if>
+      <if test="relocatenum != null" >
+        relocateNum,
+      </if>
+      <if test="relocatepeople != null" >
+        relocatePeople,
+      </if>
+      <if test="houselocated != null" >
+        houseLocated,
+      </if>
+      <if test="evaluatebasis != null" >
+        evaluateBasis,
+      </if>
+      <if test="inserttime != null" >
+        insertTime,
+      </if>
+      <if test="attachment != null" >
+        attachment,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="evaluatetime != null" >
+        #{evaluatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="relocatenum != null" >
+        #{relocatenum,jdbcType=VARCHAR},
+      </if>
+      <if test="relocatepeople != null" >
+        #{relocatepeople,jdbcType=VARCHAR},
+      </if>
+      <if test="houselocated != null" >
+        #{houselocated,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluatebasis != null" >
+        #{evaluatebasis,jdbcType=VARCHAR},
+      </if>
+      <if test="inserttime != null" >
+        #{inserttime,jdbcType=VARCHAR},
+      </if>
+      <if test="attachment != null" >
+        #{attachment,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="Evaluate" >
+    update t_evaluate
+    <set >
+      <if test="evaluatetime != null" >
+        evaluateTime = #{evaluatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="relocatenum != null" >
+        relocateNum = #{relocatenum,jdbcType=VARCHAR},
+      </if>
+      <if test="relocatepeople != null" >
+        relocatePeople = #{relocatepeople,jdbcType=VARCHAR},
+      </if>
+      <if test="houselocated != null" >
+        houseLocated = #{houselocated,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluatebasis != null" >
+        evaluateBasis = #{evaluatebasis,jdbcType=VARCHAR},
+      </if>
+      <if test="inserttime != null" >
+        insertTime = #{inserttime,jdbcType=VARCHAR},
+      </if>
+      <if test="attachment != null" >
+        attachment = #{attachment,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="Evaluate" >
+    update t_evaluate
+    set evaluateTime = #{evaluatetime,jdbcType=VARCHAR},
+      relocateNum = #{relocatenum,jdbcType=VARCHAR},
+      relocatePeople = #{relocatepeople,jdbcType=VARCHAR},
+      houseLocated = #{houselocated,jdbcType=VARCHAR},
+      evaluateBasis = #{evaluatebasis,jdbcType=VARCHAR},
+      insertTime = #{inserttime,jdbcType=VARCHAR},
+      attachment = #{attachment,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
